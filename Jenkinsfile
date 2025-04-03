@@ -8,9 +8,9 @@ pipeline {
         }
         stage('Deploy to Nginx') {
             steps {
-                sh 'cp index.html /usr/share/nginx/html/'
+                
                 //Or use rsync for remote deployments.
-                //sh 'rsync -avz index.html user@nginx-server:/usr/share/nginx/html/'
+                sh 'rsync -avz index.html user@nginx-server:/usr/share/nginx/html/'
             }
         }
     }
